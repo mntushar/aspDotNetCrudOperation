@@ -50,6 +50,14 @@ namespace crudOperation.Controllers
             return RedirectToAction("StudentList");
         }
 
+        public ActionResult Details(int id)
+        {
+            Student student = db.Student.Find(id);
+
+            ViewBag.title = "Student Details";
+
+            return View(student);
+        }
 
         //private UniversityDBContext db = new UniversityDBContext();
 
