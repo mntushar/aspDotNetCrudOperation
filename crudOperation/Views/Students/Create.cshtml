@@ -1,0 +1,16 @@
+﻿@model crudOperation.Models.Student
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Student</h2>
+
+@using (Html.BeginForm())
+{   
+    @Html.LabelFor(s => s.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+
+
+}

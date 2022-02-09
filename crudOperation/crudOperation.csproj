@@ -171,12 +171,28 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202080928539_createStudenTable.cs" />
+    <Compile Include="Migrations\202202080928539_createStudenTable.designer.cs">
+      <DependentUpon>202202080928539_createStudenTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202081147032_updte studnt table email type.cs" />
+    <Compile Include="Migrations\202202081147032_updte studnt table email type.designer.cs">
+      <DependentUpon>202202081147032_updte studnt table email type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202090627218_account.cs" />
+    <Compile Include="Migrations\202202090627218_account.designer.cs">
+      <DependentUpon>202202090627218_account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\student.cs" />
+    <Compile Include="Models\UniversityDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -236,10 +252,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -253,6 +273,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202080928539_createStudenTable.resx">
+      <DependentUpon>202202080928539_createStudenTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202081147032_updte studnt table email type.resx">
+      <DependentUpon>202202081147032_updte studnt table email type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202090627218_account.resx">
+      <DependentUpon>202202090627218_account.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
