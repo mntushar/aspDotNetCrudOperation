@@ -1,7 +1,7 @@
 ﻿@model crudOperation.Models.Student
 
 @{
-    ViewBag.Title = "Create Student";
+    ViewBag.Title = ViewBag.title;
 }
 
 <style>
@@ -10,7 +10,7 @@
     }
 </style>
 
-<h2>Create Student</h2>
+<h2>@ViewBag.title</h2>
 
 <div class="row">
     <div class="col-md-10 col-md-offset-4">
@@ -26,5 +26,9 @@
 
         }
     </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to student list", "StudentList", "Students")
 </div>
 

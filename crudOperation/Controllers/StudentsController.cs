@@ -14,13 +14,14 @@ namespace crudOperation.Controllers
     {
         private UniversityDBContext db = new UniversityDBContext();
 
-        public ActionResult Index()
+        public ActionResult StudentList()
         {
             return View(db.Student.ToList());
         }
 
         public ActionResult Create()
         {
+            ViewBag.title = "Create Student";
             return View();
         }
 
@@ -29,8 +30,26 @@ namespace crudOperation.Controllers
         {
             db.Student.Add(student);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            ViewBag.title = "Create Student";
+            return RedirectToAction("StudentList");
         }
+
+        public ActionResult Edit(int id )
+        {
+            Student student = db.Student.Find(id);
+            ViewBag.title = "Edit Student Information";
+            return View("Create", student);
+
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Student student)
+        {
+            db.Entry(student).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("StudentList");
+        }
+
 
         //private UniversityDBContext db = new UniversityDBContext();
 
