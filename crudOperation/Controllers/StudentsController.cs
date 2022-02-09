@@ -59,6 +59,25 @@ namespace crudOperation.Controllers
             return View(student);
         }
 
+        public ActionResult Delete(int? id)
+        {
+            Student student = db.Student.Find(id);
+
+            ViewBag.title = "Delete Student";
+
+            return View("Details", student);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirm(int id)
+        {
+            Student student = db.Student.Find(id);
+            db.Student.Remove(student);
+            db.SaveChanges();
+
+            return RedirectToAction("StudentList");
+        }
+
         //private UniversityDBContext db = new UniversityDBContext();
 
         //// GET: Students
