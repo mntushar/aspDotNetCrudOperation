@@ -23,6 +23,15 @@ namespace crudOperation.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Create(Student student)
+        {
+            db.Student.Add(student);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         //private UniversityDBContext db = new UniversityDBContext();
 
         //// GET: Students
