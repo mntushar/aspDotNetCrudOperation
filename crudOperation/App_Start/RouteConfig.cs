@@ -18,18 +18,6 @@ namespace crudOperation
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
-            routes.MapRoute(
-                name: "Student",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Student", action = "StudentList", id = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
-                name: "Department",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Department", action = "DepartmentList", id = UrlParameter.Optional }
-            );
         }
     }
 }
