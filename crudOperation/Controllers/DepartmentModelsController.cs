@@ -34,12 +34,14 @@ namespace crudOperation.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.title = "Department Details";
             return View(Department);
         }
 
         // GET: Department/Create
         public ActionResult Create()
         {
+            ViewBag.title = "Create Department";
             return View();
         }
 
@@ -54,10 +56,10 @@ namespace crudOperation.Controllers
             {
                 db.Department.Add(Department);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DepartmentList");
             }
 
-            return View(Department);
+            return View("Create", Department);
         }
 
         // GET: Department/Edit/5
@@ -67,12 +69,13 @@ namespace crudOperation.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DepartmentModels departmentModels = db.Department.Find(id);
-            if (departmentModels == null)
+            DepartmentModels department = db.Department.Find(id);
+            if (department == null)
             {
                 return HttpNotFound();
             }
-            return View(departmentModels);
+            ViewBag.title = "Edit Department";
+            return View("Create", department);
         }
 
         // POST: DepartmentModels/Edit/5
@@ -86,9 +89,9 @@ namespace crudOperation.Controllers
             {
                 db.Entry(department).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DepartmentList");
             }
-            return View(department);
+            return View("Edit", department);
         }
 
         // GET: DepartmentModels/Delete/5
@@ -98,12 +101,12 @@ namespace crudOperation.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DepartmentModels departmentModels = db.Department.Find(id);
-            if (departmentModels == null)
+            DepartmentModels department = db.Department.Find(id);
+            if (department == null)
             {
                 return HttpNotFound();
             }
-            return View(departmentModels);
+            return View("Details", department);
         }
 
         // POST: DepartmentModels/Delete/5
@@ -111,10 +114,10 @@ namespace crudOperation.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DepartmentModels departmentModels = db.Department.Find(id);
-            db.Department.Remove(departmentModels);
+            DepartmentModels department = db.Department.Find(id);
+            db.Department.Remove(department);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("DepartmentList");
         }
 
         protected override void Dispose(bool disposing)

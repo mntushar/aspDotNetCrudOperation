@@ -1,34 +1,57 @@
 ﻿@model crudOperation.Models.DepartmentModels
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = ViewBag.title;
 }
 
-<h2>Details</h2>
+<h2>@ViewBag.title</h2>
 
 <div>
-    <h4>DepartmentModels</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Code)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Code)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Code)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Code)
+                </dd>
 
-    </dl>
+            </dl>
+        </div>
+    </div>
 </div>
+
+@{
+    if (ViewContext.RouteData.GetRequiredString("action") == "Delete")
+    {
+        <div class="row">
+            <div class="col-md-10 col-md-offset-4">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <br />
+                    <p class="text-danger">*Do you want to delete it!?</p>
+                    <button type="submit" id="createStudentButton" class="btn btn-danger">Delete</button>
+                }
+            </div>
+        </div>
+
+    }
+
+}
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "DepartmentList")
 </p>
