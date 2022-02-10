@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DepartmentModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
@@ -178,6 +179,10 @@
     <Compile Include="Migrations\202202100728060_crete student table.cs" />
     <Compile Include="Migrations\202202100728060_crete student table.designer.cs">
       <DependentUpon>202202100728060_crete student table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202100759000_create department table.cs" />
+    <Compile Include="Migrations\202202100759000_create department table.designer.cs">
+      <DependentUpon>202202100759000_create department table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -264,6 +269,11 @@
     <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\StudentList.cshtml" />
+    <Content Include="Views\DepartmentModels\Create.cshtml" />
+    <Content Include="Views\DepartmentModels\Delete.cshtml" />
+    <Content Include="Views\DepartmentModels\Details.cshtml" />
+    <Content Include="Views\DepartmentModels\Edit.cshtml" />
+    <Content Include="Views\DepartmentModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -276,6 +286,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202100728060_crete student table.resx">
       <DependentUpon>202202100728060_crete student table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202100759000_create department table.resx">
+      <DependentUpon>202202100759000_create department table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
