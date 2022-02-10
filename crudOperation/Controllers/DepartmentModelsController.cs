@@ -16,8 +16,9 @@ namespace crudOperation.Controllers
         private UniversityDBContext db = new UniversityDBContext();
 
         // GET: Department
-        public ActionResult Index()
+        public ActionResult DepartmentList()
         {
+            ViewBag.title = "Department List";
             return View(db.Department.ToList());
         }
 

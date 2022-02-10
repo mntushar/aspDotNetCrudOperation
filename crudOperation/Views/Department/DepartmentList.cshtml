@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<crudOperation.Models.DepartmentModels>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = ViewBag.title;
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")

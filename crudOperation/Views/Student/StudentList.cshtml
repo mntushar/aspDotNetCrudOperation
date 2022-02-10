@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<crudOperation.Models.StudentModels>
 
 @{
-    ViewBag.Title = "Student List";
+    ViewBag.Title = ViewBag.title;
 }
 
-<h2>Student List</h2>
+<h2>@ViewBag.title</h2>
 
-<p>@Html.ActionLink("Create student", "Create", "Students")</p>
+<p>@Html.ActionLink("Create student", "Create", "Student")</p>
 
 @using (Html.BeginForm())
 {
