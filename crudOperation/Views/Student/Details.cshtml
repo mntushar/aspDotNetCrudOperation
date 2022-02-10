@@ -32,9 +32,10 @@
             <div class="col-md-10 col-md-offset-4">
                 @using (Html.BeginForm())
                 {
-                <br />
-                <p class="text-danger">*Do you want to delete it!?</p>
-                <button type="submit" id="createStudentButton" class="btn btn-danger">Delete</button>
+                    @Html.AntiForgeryToken()
+                    <br />
+                    <p class="text-danger">*Do you want to delete it!?</p>
+                    <button type="submit" id="createStudentButton" class="btn btn-danger">Delete</button>
                 }
             </div>
         </div>
