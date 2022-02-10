@@ -5,7 +5,7 @@ using System.Web;
 
 namespace crudOperation.Models
 {
-    public class Student
+    public class StudentModels
     {
         public int Id { get; set; }
         public string Name { get; set; }

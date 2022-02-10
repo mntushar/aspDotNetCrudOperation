@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using crudOperation.Models;
+using crudOperation.Models.ModelsContext;
 
 namespace crudOperation.Controllers
 {
@@ -26,7 +27,7 @@ namespace crudOperation.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Student student)
+        public ActionResult Create(StudentModels student)
         {
             db.Student.Add(student);
             db.SaveChanges();
@@ -34,25 +35,25 @@ namespace crudOperation.Controllers
             return RedirectToAction("StudentList");
         }
 
-        public ActionResult Edit(int id )
+        public ActionResult Edit(int? id )
         {
-            Student student = db.Student.Find(id);
+            StudentModels student = db.Student.Find(id);
             ViewBag.title = "Edit Student Information";
             return View("Create", student);
 
         }
 
         [HttpPost]
-        public ActionResult Edit(Student student)
+        public ActionResult Edit(StudentModels student)
         {
             db.Entry(student).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("StudentList");
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            Student student = db.Student.Find(id);
+            StudentModels student = db.Student.Find(id);
 
             ViewBag.title = "Student Details";
 
@@ -61,7 +62,7 @@ namespace crudOperation.Controllers
 
         public ActionResult Delete(int? id)
         {
-            Student student = db.Student.Find(id);
+            StudentModels student = db.Student.Find(id);
 
             ViewBag.title = "Delete Student";
 
@@ -69,9 +70,9 @@ namespace crudOperation.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirm(int id)
+        public ActionResult DeleteConfirm(int? id)
         {
-            Student student = db.Student.Find(id);
+            StudentModels student = db.Student.Find(id);
             db.Student.Remove(student);
             db.SaveChanges();
 
