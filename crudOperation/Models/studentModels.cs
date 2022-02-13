@@ -11,6 +11,9 @@ namespace crudOperation.Models
         public string Name { get; set; }
         public string RegNo { get; set; }
         public string Email { get; set; }  
+        public int DepartmentId { get; set; }
+        public virtual DepartmentModels Department { get; set; }
+        
 
 
     }

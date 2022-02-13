@@ -32,6 +32,49 @@
     </div>
 </div>
 
+<h3 class="text-center">Student List</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayFor(model => model.Students[0].Name)*@
+            Name
+        </th>
+        <th>
+            @*@Html.DisplayFor(model => model.Students[0].Email)*@
+            Email
+        </th>
+        <th>
+            @*@Html.DisplayFor(model => model.Students[0].RegNo)*@
+            RegNo
+        </th>
+        <th>
+            @*@Html.DisplayFor("Department")*@
+            Department
+        </th>
+    </tr>
+    @{ foreach (var student in Model.Students)
+        {
+        <tr>
+            <td>
+                @student.Name
+            </td>
+            <td>
+                @student.Email
+            </td>
+            <td>
+                @student.RegNo
+            </td>
+            <td>
+                @student.Department.Code
+            </td>
+        </tr>
+        }
+
+    }
+</table>
+
+
 @{
     if (ViewContext.RouteData.GetRequiredString("action") == "Delete")
     {

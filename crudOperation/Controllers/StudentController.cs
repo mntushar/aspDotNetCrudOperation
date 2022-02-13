@@ -23,6 +23,7 @@ namespace crudOperation.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.DepartmentId = new SelectList(db.Department, "Id", "Name");
             ViewBag.title = "Create Student";
             return View();
         }

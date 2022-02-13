@@ -176,13 +176,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202100728060_crete student table.cs" />
-    <Compile Include="Migrations\202202100728060_crete student table.designer.cs">
-      <DependentUpon>202202100728060_crete student table.cs</DependentUpon>
+    <Compile Include="Migrations\202202131627368_studentAndDepartmentTable.cs" />
+    <Compile Include="Migrations\202202131627368_studentAndDepartmentTable.designer.cs">
+      <DependentUpon>202202131627368_studentAndDepartmentTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202100759000_create department table.cs" />
-    <Compile Include="Migrations\202202100759000_create department table.designer.cs">
-      <DependentUpon>202202100759000_create department table.cs</DependentUpon>
+    <Compile Include="Migrations\202202131657361_oneToManyRelStudenToDept.cs" />
+    <Compile Include="Migrations\202202131657361_oneToManyRelStudenToDept.designer.cs">
+      <DependentUpon>202202131657361_oneToManyRelStudenToDept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202131909270_addDeptIdInStudnt.cs" />
+    <Compile Include="Migrations\202202131909270_addDeptIdInStudnt.designer.cs">
+      <DependentUpon>202202131909270_addDeptIdInStudnt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -270,9 +274,7 @@
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Student\StudentList.cshtml" />
     <Content Include="Views\Department\Create.cshtml" />
-    <Content Include="Views\Department\Delete.cshtml" />
     <Content Include="Views\Department\Details.cshtml" />
-    <Content Include="Views\Department\Edit.cshtml" />
     <Content Include="Views\Department\DepartmentList.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -284,11 +286,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202100728060_crete student table.resx">
-      <DependentUpon>202202100728060_crete student table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202131627368_studentAndDepartmentTable.resx">
+      <DependentUpon>202202131627368_studentAndDepartmentTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202100759000_create department table.resx">
-      <DependentUpon>202202100759000_create department table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202131657361_oneToManyRelStudenToDept.resx">
+      <DependentUpon>202202131657361_oneToManyRelStudenToDept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202131909270_addDeptIdInStudnt.resx">
+      <DependentUpon>202202131909270_addDeptIdInStudnt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

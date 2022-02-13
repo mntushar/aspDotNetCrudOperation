@@ -22,6 +22,10 @@
             @Html.TextBoxFor(model => model.RegNo, new { @class = "form-control" })
             @Html.LabelFor(model => model.Email)
             @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            @Html.LabelFor(model => model.Department)
+            @Html.DropDownList("DepartmentId",  null, "--Select--", new { @class = "form-control" })
+            
+
             <button type="submit" id="createStudentButton" class="btn btn-primary">Submit</button>
 
         }

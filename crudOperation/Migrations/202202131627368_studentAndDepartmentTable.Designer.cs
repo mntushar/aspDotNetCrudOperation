@@ -7,13 +7,13 @@ namespace crudOperation.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class cretestudenttable : IMigrationMetadata
+    public sealed partial class studentAndDepartmentTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(cretestudenttable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(studentAndDepartmentTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202100728060_crete student table"; }
+            get { return "202202131627368_studentAndDepartmentTable"; }
         }
         
         string IMigrationMetadata.Source
