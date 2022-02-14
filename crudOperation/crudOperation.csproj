@@ -188,6 +188,18 @@
     <Compile Include="Migrations\202202131909270_addDeptIdInStudnt.designer.cs">
       <DependentUpon>202202131909270_addDeptIdInStudnt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202141312131_addRequiredInStudent.cs" />
+    <Compile Include="Migrations\202202141312131_addRequiredInStudent.designer.cs">
+      <DependentUpon>202202141312131_addRequiredInStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202141338057_addEmailValaidationInStudent.cs" />
+    <Compile Include="Migrations\202202141338057_addEmailValaidationInStudent.designer.cs">
+      <DependentUpon>202202141338057_addEmailValaidationInStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202141421206_addRequardInStudentDepartment.cs" />
+    <Compile Include="Migrations\202202141421206_addRequardInStudentDepartment.designer.cs">
+      <DependentUpon>202202141421206_addRequardInStudentDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DepartmentModels.cs" />
@@ -294,6 +306,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202131909270_addDeptIdInStudnt.resx">
       <DependentUpon>202202131909270_addDeptIdInStudnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202141312131_addRequiredInStudent.resx">
+      <DependentUpon>202202141312131_addRequiredInStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202141338057_addEmailValaidationInStudent.resx">
+      <DependentUpon>202202141338057_addEmailValaidationInStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202141421206_addRequardInStudentDepartment.resx">
+      <DependentUpon>202202141421206_addRequardInStudentDepartment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

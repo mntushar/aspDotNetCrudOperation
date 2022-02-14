@@ -28,13 +28,18 @@ namespace crudOperation.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Create(StudentModels student)
         {
-            db.Student.Add(student);
-            db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                db.Student.Add(student);
+                db.SaveChanges();
+                return RedirectToAction("StudentList");
+            }
+            
             ViewBag.title = "Create Student";
-            return RedirectToAction("StudentList");
+            return View();
         }
 
         public ActionResult Edit(int? id )
