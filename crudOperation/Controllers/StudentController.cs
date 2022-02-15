@@ -14,6 +14,11 @@ namespace crudOperation.Controllers
     public class StudentController : Controller
     {
         private UniversityDBContext db = new UniversityDBContext();
+        private SelectList StudentDepartments()
+        {
+            SelectList allDepartments = new SelectList(db.Department, "Id", "Name");
+            return allDepartments;
+        } 
 
         public ActionResult StudentList()
         {
@@ -23,7 +28,8 @@ namespace crudOperation.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.DepartmentId = new SelectList(db.Department, "Id", "Name");
+            ViewBag.allDepartments = StudentDepartments();
+            //ViewBag.Departments = db.Department.ToList();
             ViewBag.title = "Create Student";
             return View();
         }
@@ -31,15 +37,23 @@ namespace crudOperation.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Create(StudentModels student)
         {
+            //ViewBag.Departments = db.Department.ToList();
+            ViewBag.allDepartments = StudentDepartments();
             if (ModelState.IsValid)
             {
-                db.Student.Add(student);
-                db.SaveChanges();
-                return RedirectToAction("StudentList");
+                DepartmentModels department = db.Department.Find(student.DepartmentId);
+                if (department != null)
+                {
+                    db.Student.Add(student);
+                    db.SaveChanges();
+                    return RedirectToAction("StudentList");
+                }
+                ModelState.AddModelError(nameof(StudentModels.DepartmentId), "Please select department");
+
             }
             
             ViewBag.title = "Create Student";
-            return View();
+            return View(student);
         }
 
         public ActionResult Edit(int? id )
