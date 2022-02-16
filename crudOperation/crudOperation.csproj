@@ -200,6 +200,10 @@
     <Compile Include="Migrations\202202141421206_addRequardInStudentDepartment.designer.cs">
       <DependentUpon>202202141421206_addRequardInStudentDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202161101500_addDeptListInStuent.cs" />
+    <Compile Include="Migrations\202202161101500_addDeptListInStuent.designer.cs">
+      <DependentUpon>202202161101500_addDeptListInStuent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DepartmentModels.cs" />
@@ -315,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202141421206_addRequardInStudentDepartment.resx">
       <DependentUpon>202202141421206_addRequardInStudentDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202161101500_addDeptListInStuent.resx">
+      <DependentUpon>202202161101500_addDeptListInStuent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,6 +14,7 @@ namespace crudOperation.Controllers
     public class StudentController : Controller
     {
         private UniversityDBContext db = new UniversityDBContext();
+
         private SelectList StudentDepartments()
         {
             SelectList allDepartments = new SelectList(db.Department, "Id", "Name");
@@ -59,6 +60,7 @@ namespace crudOperation.Controllers
         public ActionResult Edit(int? id )
         {
             StudentModels student = db.Student.Find(id);
+            ViewBag.allDepartments = StudentDepartments();
             ViewBag.title = "Edit Student Information";
             return View("Create", student);
 
@@ -67,6 +69,7 @@ namespace crudOperation.Controllers
         [HttpPost]
         public ActionResult Edit(StudentModels student)
         {
+            ViewBag.allDepartments = StudentDepartments();
             db.Entry(student).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("StudentList");

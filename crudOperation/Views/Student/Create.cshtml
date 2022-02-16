@@ -62,17 +62,18 @@
                 <tr>
                     <td>
                         @*<select class="form-control" name="DepartmentId" id="DepartmentId">
-                            <option value="0">--Select--</option>
-                            @foreach (var department in ViewBag.Departments)
-                            {
-                                <option value="@department.Id">@department.Name</option>
-                                @Html.ValidationMessage("DepartmentId")
-                            }
-                        </select>*@
+            <option value="0">--Select--</option>
+            @foreach (var department in ViewBag.Departments)
+            {
+                <option value="@department.Id">@department.Name</option>
+                @Html.ValidationMessage("DepartmentId")
+            }
+        </select>*@
 
                         @*@Html.DropDownList("DepartmentId", "select", (IEnumerable<SelectListItem>)ViewBag.DepartmentId)*@
                         @Html.DropDownListFor(model => model.DepartmentId, (IEnumerable<SelectListItem>)ViewBag.allDepartments, "--Select Department--", new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
+                        
                     </td>
                 </tr>
             </table>

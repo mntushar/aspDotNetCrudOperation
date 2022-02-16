@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -24,8 +25,6 @@ namespace crudOperation.Models
         [Required, Display(Name = "Department")]
         public int DepartmentId { get; set; }
         public virtual DepartmentModels Department { get; set; }
-        
-
 
     }
 }
