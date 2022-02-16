@@ -30,7 +30,6 @@ namespace crudOperation.Controllers
         public ActionResult Create()
         {
             ViewBag.allDepartments = StudentDepartments();
-            //ViewBag.Departments = db.Department.ToList();
             ViewBag.title = "Create Student";
             return View();
         }
@@ -38,7 +37,6 @@ namespace crudOperation.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Create(StudentModels student)
         {
-            //ViewBag.Departments = db.Department.ToList();
             ViewBag.allDepartments = StudentDepartments();
             if (ModelState.IsValid)
             {
@@ -59,6 +57,10 @@ namespace crudOperation.Controllers
 
         public ActionResult Edit(int? id )
         {
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             StudentModels student = db.Student.Find(id);
             ViewBag.allDepartments = StudentDepartments();
             ViewBag.title = "Edit Student Information";
@@ -66,18 +68,31 @@ namespace crudOperation.Controllers
 
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Edit(StudentModels student)
         {
             ViewBag.allDepartments = StudentDepartments();
-            db.Entry(student).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("StudentList");
+            if (ModelState.IsValid)
+            {
+                db.Entry(student).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("StudentList");
+            }
+            
+            return View(student);
         }
 
         public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             StudentModels student = db.Student.Find(id);
+            if(student == null)
+            {
+                return HttpNotFound();
+            }
 
             ViewBag.title = "Student Details";
 
@@ -86,7 +101,15 @@ namespace crudOperation.Controllers
 
         public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             StudentModels student = db.Student.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
 
             ViewBag.title = "Delete Student";
 
@@ -96,10 +119,17 @@ namespace crudOperation.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirm(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             StudentModels student = db.Student.Find(id);
-            db.Student.Remove(student);
-            db.SaveChanges();
-
+            if (student != null)
+            {
+                db.Student.Remove(student);
+                db.SaveChanges();
+            }
+            
             return RedirectToAction("StudentList");
         }
 
