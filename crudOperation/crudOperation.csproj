@@ -204,6 +204,10 @@
     <Compile Include="Migrations\202202161101500_addDeptListInStuent.designer.cs">
       <DependentUpon>202202161101500_addDeptListInStuent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202161537325_addRequiredInDevelopmen.cs" />
+    <Compile Include="Migrations\202202161537325_addRequiredInDevelopmen.designer.cs">
+      <DependentUpon>202202161537325_addRequiredInDevelopmen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DepartmentModels.cs" />
@@ -322,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202161101500_addDeptListInStuent.resx">
       <DependentUpon>202202161101500_addDeptListInStuent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202161537325_addRequiredInDevelopmen.resx">
+      <DependentUpon>202202161537325_addRequiredInDevelopmen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
